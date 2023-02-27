@@ -1,0 +1,29 @@
+<div class="card-panel shadow p-5 rounded-2 mb-3" id="<%= dom_id job %>">
+  <h4>
+    <strong><%= job.name %></strong>
+  </h4>
+  
+  <p>
+    <strong>Description:</strong>
+    <%= job.description %>
+  </p>
+  
+  <p>
+    <strong>Price:</strong>
+    <% if job.price.blank? %>
+    <%= job.price %>
+    <% else %>
+    <%= number_to_currency(job.price/100) %>
+    <% end %>
+  </p>
+  
+  <p>
+    <strong>Datetime:</strong>
+    
+    <% if job.datetime.blank? %>
+    <%= job.datetime %>
+    <% else %>
+    <%= job.datetime.strftime("%D") %>
+    <% end %>
+  </p>
+</div>
